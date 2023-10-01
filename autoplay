@@ -1,0 +1,21 @@
+// Define the URL of the website you want to control autoplay on
+const targetUrl = 'https://soap2day.rs'; //
+
+// Function to toggle autoplay
+function toggleAutoplay() {
+  const videoElements = document.querySelectorAll('video');
+  videoElements.forEach((video) => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+}
+
+// Check if the current URL matches the target URL
+if (window.location.href === targetUrl) {
+  // Add an event listener to a button or element that triggers the toggle
+  const toggleButton = document.getElementById('autoplay-toggle-button'); // Replace with the actual button's ID
+  toggleButton.addEventListener('click', toggleAutoplay);
+}
